@@ -3,6 +3,9 @@ Finds roots of 4th order polynomials of the form
 ```math
 ax⁴ + bx³ + cx² + dx + e = 0
 ```
+based on the Fast Quartic and Cubic Solver
+https://github.com/NKrvavica/fqs
+by Nino Krvavica.
 """
 module QuarticSolver
 
@@ -20,9 +23,6 @@ function solvequadratic(a0, b0, c0)
     return r1, r2
 end
 
-"""
-https://github.com/NKrvavica/fqs/blob/master/On_computing_roots.md
-"""
 function solvecubic(a0, b0, c0, d0)
     inva0 = 1/a0
     a, b, c = b0*inva0, c0*inva0, d0*inva0
@@ -62,9 +62,6 @@ function solvecubic(a0, b0, c0, d0)
     end
 end
 
-"""
-https://github.com/NKrvavica/fqs
-"""
 function solvequartic(a0, b0, c0, d0, e0)
     inva0 = 1/a0
     a, b, c, d = b0*inva0, c0*inva0, d0*inva0, e0*inva0
@@ -81,7 +78,6 @@ function solvequartic(a0, b0, c0, d0, e0)
     z0, _, _ = solvecubic(1, p, r, p*r-0.5*q^2)
     z0 = complex(z0)
 
-    # s = sqrt(2*p + 2*real(z0) + 0im)
     s = sqrt(2*p + 2*z0)
     s == 0 ? t = z0^2 + r : t = -q/s
 
