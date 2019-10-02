@@ -2,3 +2,13 @@ name = "QuarticSolver"
 uuid = "efd27559-0196-40c1-9d2a-48dcd51f8c0a"
 authors = ["Forrest Gasdia <EP-Guy@users.noreply.github.com>"]
 version = "0.1.0"
+
+[extras]
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+PolynomialRoots = "3a141323-8675-5d76-9d11-e1df1406c778"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["BenchmarkTools", "PolynomialRoots", "Random", "Statistics", "Test"]
